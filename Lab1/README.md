@@ -103,7 +103,7 @@ Run the command: `pip install -r requirements.txt`
 
 Run tests locally using pytest with the command: `pytest test/ -v`
 
-Expected output: All 13 tests should pass.
+Expected output: All 11 tests should pass.
 
 ## CI/CD Pipeline
 
