@@ -5,6 +5,8 @@ This project demonstrates a Python calculator application with automated testing
 ## Project Overview
 
 A simple calculator module that provides basic arithmetic and mathematical operations, with comprehensive unit tests and automated continuous integration.
+
+```
 Lab1/
 ├── .github/
 │   └── workflows/
@@ -12,7 +14,7 @@ Lab1/
 ├── data/
 │   └── init.py
 ├── src/
-│   ├── init.py
+│   ├── __init__.py
 │   └── calculator.py          # Calculator implementation
 ├── test/
 │   ├── init.py
@@ -20,6 +22,7 @@ Lab1/
 ├── .gitignore
 ├── requirements.txt
 └── README.md
+```
 
 ## Features
 
