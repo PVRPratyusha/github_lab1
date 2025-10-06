@@ -8,7 +8,7 @@ from pathlib import Path
 # Add parent directory to path so we can import src
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from src.calculator import add, subtract, multiply, divide
+from src.calculator import add, subtract, multiply, divide, power, sqrt, modulo, absolute
 
 
 class TestCalculator:
@@ -42,3 +42,40 @@ class TestCalculator:
         """Test division by zero raises error."""
         with pytest.raises(ValueError):
             divide(10, 0)
+
+    def test_power(self):
+        """Test power function."""
+        assert power(2, 3) == 8
+        assert power(5, 2) == 25
+        assert power(10, 0) == 1
+        assert power(2, -1) == 0.5
+
+    def test_sqrt(self):
+        """Test square root function."""
+        assert sqrt(4) == 2
+        assert sqrt(9) == 3
+        assert sqrt(0) == 0
+        assert sqrt(2) == pytest.approx(1.414, rel=0.01)
+
+    def test_sqrt_negative(self):
+        """Test square root of negative raises error."""
+        with pytest.raises(ValueError):
+            sqrt(-1)
+
+    def test_modulo(self):
+        """Test modulo function."""
+        assert modulo(10, 3) == 1
+        assert modulo(15, 4) == 3
+        assert modulo(20, 5) == 0
+
+    def test_modulo_by_zero(self):
+        """Test modulo by zero raises error."""
+        with pytest.raises(ValueError):
+            modulo(10, 0)
+
+    def test_absolute(self):
+        """Test absolute value function."""
+        assert absolute(-5) == 5
+        assert absolute(5) == 5
+        assert absolute(0) == 0
+        assert absolute(-3.14) == 3.14
